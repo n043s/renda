@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AutoKey / AutoClick – Inspector</title>
+
+<!-- Stream Deck 標準 CSS (同梱されている場合は読み込み) -->
+<link rel="stylesheet" href="sdpi.css">
+
+<style>
+ /* 最低限のダークテーマ補完。sdpi.css がある場合はほぼ無視されます */
+ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      margin:10px;color:#fff;background:#111}
+ label{display:block;margin-top:8px;font-size:13px}
+ input,select{width:100%;padding:4px 6px;font-size:13px;
+              border:1px solid #555;border-radius:4px;
+              background:#1b1b1b;color:#fff;box-sizing:border-box}
+</style>
+</head>
+
+<body>
+  <!-- 種類選択 -->
+  <label for="type">Type</label>
+  <select id="type">
+    <option value="key">Keyboard</option>
+    <option value="left">Mouse Left</option>
+    <option value="right">Mouse Right</option>
+    <option value="middle">Mouse Middle</option>
+  </select>
+
+  <!-- キー入力欄 (Keyboard 選択時のみ有効) -->
+  <label for="key" id="keyLabel">Key (例: a, enter, f1 …)</label>
+  <input id="key" type="text" maxlength="20" placeholder="a / enter / f1 …">
+
+  <!-- ミリ秒設定 -->
+  <label for="delay">Delay (msec)</label>
+  <input id="delay" type="number" min="1" step="1" placeholder="100">
+
+  <script src="inspector.js"></script>
+</body>
+</html>
